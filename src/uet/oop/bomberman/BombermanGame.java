@@ -74,46 +74,43 @@ public class BombermanGame extends Application {
 
                 entities.remove(entities.size() - 1);
                 Sprite.y_bomber++;
-                Entity newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_down.getFxImage());
+                Entity newbomberman;
+                if(Sprite.y_bomber % 3 == 1) newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_down.getFxImage());
+                else if (Sprite.y_bomber % 3 == 2) newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_down_1.getFxImage());
+                else newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_down_2.getFxImage());
                 entities.add(newbomberman);
             }
             if(key.getCode()==KeyCode.UP && Sprite.y_bomber >= 2 ) {
 
                 entities.remove(entities.size() - 1);
                 Sprite.y_bomber--;
-                Entity newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_up.getFxImage());
+                Entity newbomberman ;
+                if(Sprite.y_bomber % 3 == 1) newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_up.getFxImage());
+                else if (Sprite.y_bomber % 3 == 2) newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_up_1.getFxImage());
+                else newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_up_2.getFxImage());
                 entities.add(newbomberman);
             }
             if(key.getCode()==KeyCode.RIGHT && Sprite.x_bomber <= WIDTH - 3 ) {
                 entities.remove(entities.size() - 1);
                 Sprite.x_bomber++;
-                Entity newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_right.getFxImage());
+                Entity newbomberman ;
+                if(Sprite.x_bomber % 3 == 1) newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_right.getFxImage());
+                else if (Sprite.x_bomber % 3 == 2) newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_right_1.getFxImage());
+                else newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_right_2.getFxImage());
                 entities.add(newbomberman);
             }
             if(key.getCode()==KeyCode.LEFT && Sprite.x_bomber >= 2 ) {
 
                 entities.remove(entities.size() - 1);
                 Sprite.x_bomber--;
-                Entity newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_left.getFxImage());
+                Entity newbomberman ;
+                if(Sprite.x_bomber % 3 == 1) newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_left.getFxImage());
+                else if (Sprite.x_bomber % 3 == 2) newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_left_1.getFxImage());
+                else newbomberman = new Bomber(Sprite.x_bomber, Sprite.y_bomber, Sprite.player_left_2.getFxImage());
                 entities.add(newbomberman);
             }
         });
-//        EventHandler<KeyEvent> keyEventsHandler = t -> {
-//            if (t.getCode() == KeyCode.ENTER) {
-//                entities.remove(bomberman);
-//                y_bomber++;
-//                entities.add(bomberman);
-//            }
-//        };
 
-//            }
-////            } else if (t.getCode() == KeyCode.ESCAPE) {
-////                cancelEdit();
-////            } else if (t.getCode() == KeyCode.TAB) {
-////                commitHelper(false);
-////                editNext(!t.isShiftDown());
-////            }
-//        }
     }
 
     public void createMap() {
