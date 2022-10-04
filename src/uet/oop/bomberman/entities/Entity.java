@@ -13,6 +13,16 @@ public abstract class Entity {
 
     protected Image img;
 
+    protected String input = "";
+
+    public Entity() {
+    }
+
+    public Entity(int x, int y) {
+        x = x;
+        y = y;
+    }
+
     // Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
     public Entity(int xUnit, int yUnit, Image img) {
         this.x = xUnit * Sprite.SCALED_SIZE;
@@ -40,5 +50,16 @@ public abstract class Entity {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public void setImg(Image img) {
+        this.img = img;
+    }
+    public Image getImg() {
+        return img;
+    }
+    public void setInput(String input) {
+        this.input = input;
+
     }
 }
